@@ -9,9 +9,18 @@ import Boss.MolKing;
 import Boss.Ravana;
 import Character.Luminus;
 import NPC.Manzi;
+import Thread.LoadingThread;
 
 public class Main_sub {
 	
+   static void printSpace() {
+	        for (int i = 0; i < 10; i++) {
+	            System.out.println("");
+	        }
+	       System.out.println("================================================================================================================")
+	       ;
+	    }
+	   
 	static void indent() {
 		System.out.printf("\n\t\t\t\t\tENTER\n");
 		Scanner ch = new Scanner(System.in) ;
@@ -75,14 +84,30 @@ public class Main_sub {
 		//하인즈 --> 전체적인 개요 (비보에 대한 설명 )
 		save("|두루마기|");
 //		
+		Thread loading = new Thread(new LoadingThread("loading"));
+		loading.start();
+		try {
+			loading.join();
+		}catch (InterruptedException e) {}
+		
 		while(true) {
 		Scanner input = new Scanner(System.in);
+		System.out.println("단계를 따라가십시오.\n현재 레벨 ="+lu.lv+"\n1~10 [페리온] -> [세레니티]\n11~20 [커닝시티] -> [세레니티] \n"
+				+ "21~30 [리에나] -> [세레니티]\n31~40 [황금사원] -> [세레니티]\n");
 		System.out.println("->어디로 이동하시겠습니까  / (인벤토리 보려면 :i 입니다)   ");
 
 		String world = input.nextLine();
 		
 			if("페리온".equals(world)) {// 만지 
 //					System.out.println("\n[페리온] 으로 왔습니다.");indent();
+					
+					Thread perion = new Thread(new LoadingThread("Pmove"));
+					perion.start();
+					try {
+						perion.join();
+					}catch (InterruptedException e) {}
+				
+					System.out.println("\n[페리온]으로 왔습니다.");
 					lu.location ="페리온";
 		
 					Manzi manzi = new Manzi();
@@ -96,12 +121,22 @@ public class Main_sub {
 					num1++; //2
 					
 			}else if("커닝시티".equals(world) && ( lu.lv >= 10)){  
+				Thread c = new Thread(new LoadingThread("Cmove"));
+					c.start();
+				try {
+					c.join();
+				}catch (InterruptedException e) {}
+				
 					System.out.println("\n[커닝시티]로 왔습니다.");
 					lu.location ="커닝시티";
 					
 					System.out.println("\t#블랙 슬라임#이 나타났습니다 ");
-					System.out.println("*************전투가 시작됩니다.**************************\n");
-//					
+//					System.out.println("*************전투가 시작됩니다.**************************\n");
+					Thread b= new Thread(new LoadingThread("battle"));
+					b.start();
+					try {
+						b.join();
+					}catch (InterruptedException e) {}
 					battle(lu, new BlackSlime());
 					
 
@@ -115,6 +150,12 @@ public class Main_sub {
 					num1++;//4
 					
 			}else if("리에나".equals(world) && ( lu.lv>= 20)) {
+				Thread l = new Thread(new LoadingThread("Lmove"));
+					l.start();
+				try {
+					l.join();
+				}catch (InterruptedException e) {}
+				
 					System.out.println("\n[리에나]로 왔습니다");
 					lu.location ="리에나";
 					
@@ -129,6 +170,12 @@ public class Main_sub {
 					num1++;//6
 					
 			}else if("황금사원".equals(world) &&(lu.lv >= 30)){
+				Thread h = new Thread(new LoadingThread("Hmove"));
+					h.start();
+				try {
+					h.join();
+				}catch (InterruptedException e) {}
+				
 					System.out.println("\n[황금 사원]으롤 왔습니다.");
 					lu.location="황금사원";
 					
@@ -151,13 +198,21 @@ public class Main_sub {
 						System.out.println(i+1+"."+list.get(i));
 				
 			}else if("도움말 ".equals(world)) {
+					
 					System.out.println("도움말을 줍니다");
 						
 			}else if("세레니티".equals(world) && (num1%2==0)) {
+				Thread s = new Thread(new LoadingThread("Smove"));
+					s.start();
+				try {
+					s.join();
+				}catch (InterruptedException e) {}
+				
 						System.out.println("\n[세레니티]로 이동합니다");
 						lu.location="세레니티";
 				
 				if(num== 0) {
+						
 						System.out.println("[페리온] 끝 입니다.\n");
 						lu.LevelUp(4);indent();
 							}
@@ -167,21 +222,24 @@ public class Main_sub {
 						System.out.println("[커닝시티] 끝 입니다.\n");
 						lu.LevelUp(3);indent();
 				}else if ( num ==2) {
-				
+						
 						System.out.println("[리에나] 끝 입니다.\n");
 						lu.LevelUp(2);indent();
 				
 				}else if( num == 3) {
+						
 						System.out.println("[황금사원] 끝 입니다\n");
 						break;
 				}	
 
 			num++;num1++; //3 //5 //7
-		}else System.out.println("단계를 따라가십시오.\n현재 레벨 ="+lu.lv+"\n1~10 [페리온] -> [세레니티]\n11~20 [커닝시티] -> [세레니티] \n"
-				+ "21~30 [리에나] -> [세레니티]\n31~40 [황금사원] -> [세레니티]\n");
+		}else	{ 		
+						System.out.println("단계를 따라가십시오!!!"); }
+							
 		
 						}//while
 		
+		printSpace();
 		System.out.println("2대 마스터 등장 ");
 		BlackSlime boss= new BlackSlime();
 		lu.attack(boss);
