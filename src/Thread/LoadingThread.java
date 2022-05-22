@@ -129,10 +129,7 @@ public class LoadingThread implements Runnable{
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {}
 		}
-		
-		for(int i=0; i<60; i++) {
-			System.out.println("");
-		}
+	
 	}
 	
 	

@@ -44,16 +44,16 @@ public class Luminus extends Character {
 	
 	public void attack(Boss boss) {
 		
-	System.out.println("......---aaaaaaaaa");
-	System.out.println("....---aaaaaaaaaaaa");
-	System.out.println("...---aaaaaaaaaaaaaaa");
-	System.out.println("-----aaaaaaaaaaaaaaaaa");
-	System.out.println("----aaaaaaaaaaaaaaaaaaa");
-	System.out.println("-----aaaaaaaaaaaaaaaaa");
-	System.out.println("..----aaaaaaaaaaaaaaa");
-	System.out.println("....---aaaaaaaaaaaaa ");
-	System.out.println("......---aaaaaaaaaa  ");
-	
+	System.out.println("......---aaaaaaaaa\\\\");
+	System.out.println("....---aaaaaaaaaaaa\\\\");
+	System.out.println("...---aaaaaaoaoaoaaa\\\\");
+	System.out.println("-----aaaaaaaaaaaaaaaa\\\\");
+	System.out.println("----aaaaaaaaaaaaaaaaa//");
+	System.out.println("-----aaaaaaaaaaaaaaa//");
+	System.out.println("..----aaaaaaaaaaaaa//");
+	System.out.println("....---aaaaaaaaaaa// ");
+	System.out.println("......---aaaaaaaa//  ");
+	System.out.println();
 		
 //		double percent = 0.1*((int)(Math.random()*3)+8); //
 //		int damage =0 ;
@@ -67,6 +67,19 @@ public class Luminus extends Character {
 		int max_h = 1000*lv;
 		int size =(int)(max_h*0.3);
 		int tmp = hp;
+		
+		System.out.println("__________________________________________________ ");
+		System.out.println("|                                                 |");
+		System.out.println("| H     H     EEEEEEE         A         LL        |");
+		System.out.println("| H     H     E	             A A        LL        |");
+		System.out.println("| H     H     E	            A   A       LL        |");
+		System.out.println("| HHHHHHH     EEEEEEE      AAAAAAA      LL        |");
+		System.out.println("| H     H     E	          AA     AA     LL        |");
+		System.out.println("| H     N     E	         A         A    LL        |");
+		System.out.println("| H     N     EEEEEEE   A           A   LLLLLLLLL |"); 
+		System.out.println("|_________________________________________________|");
+		System.out.println();
+		
 		
 		if(hp > max_h*0.7) {
 			System.out.println("1.루미너스 HP"+(max_h-hp)+"회복");

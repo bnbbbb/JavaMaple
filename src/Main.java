@@ -37,7 +37,7 @@ public class Main {
 		System.out.println("하이헬로우");
 		}
 	}
-}
+
 
 		// 		이동시키는 예시 
 //		while(true) {
