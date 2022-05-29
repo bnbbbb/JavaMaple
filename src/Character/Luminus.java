@@ -6,6 +6,8 @@ import java.util.Stack;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
 
 import Boss.Boss;
+import NPC.DarkRoad1;
+import Thread.SkillEffectThread;
 
 public class Luminus extends Character {
 	private int mp;
@@ -111,7 +113,22 @@ public class Luminus extends Character {
 		
 		}
 	public void hyperAttack(Boss boss) {
+		 System.out.println("\n|| 아  || 포  || 칼  || 립  || 스 ||");
+		 
+		System.out.println();
+		System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||");
 		
+		System.out.println();
+		Thread s1 = new Thread(new SkillEffectThread());
+		s1.start();
+		 try {
+			 s1.join();
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+		
+		System.out.println(getName()+" "+boss.getName()+"에 "+3*getStrength()+"데미지");
+		boss.setHp(boss.getHp()-3*this.getStrength());
 		}
 	
 	public void stun() {

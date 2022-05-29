@@ -18,11 +18,11 @@ public class Main {
 		
 		if(select==1) {
 			
-		Story story = new Story();
+		Start_Story story = new Start_Story();
 		System.out.println("\n>>루미너스가 선택되었습니다\n\n<Story>");
 		
-//		story.start_story();
-//		story.birth();
+		story.start_story();
+		story.birth();
 		
 		//기억 잃기 전  - 검은 마법사랑 싸우는 것 구현 예정 
 //		Luminus lu_120 = new Luminus(120,100000000,100000000,"시간의 신전");

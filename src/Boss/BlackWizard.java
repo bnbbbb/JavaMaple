@@ -1,6 +1,6 @@
 package Boss;
-
 import Character.Luminus;
+
 
 public class BlackWizard extends Boss implements Runnable{
 	
@@ -65,20 +65,24 @@ public class BlackWizard extends Boss implements Runnable{
 			//궁극기 이팩트 쓰레드 
 			System.out.println("\t\t\t\t\t\t\t\t"+getName()+" "+getStrength()+"데미지\n");
 			
-			lu.setHp(lu.getHp()-getStrength());
+			 lu.setHp(lu.getHp()-getStrength());
 			System.out.println("_____________________________________________________________");
 			System.out.println("루미너스  MAX_HP : "+lu.MAX_Hp()+
 							   "\n루미너스  CUR_HP :"+lu.getHp());
 			System.out.println("_____________________________________________________________");
 		}
 	}
+	public void attack() {
+		Luminus lu = new Luminus();
+		attack(lu);
+	}
 	
 	@Override
 	public void run() {
-	
+
 //		while(true) {
 		for(int i = 0 ; i<10 ; i++) {
-		 attack(new Luminus(40));
+		 
 		 
 		try {
 			Thread.sleep(3000);

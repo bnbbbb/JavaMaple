@@ -25,15 +25,17 @@ public class Battle {
 		System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  MAX_HP : "+lu.MAX_Hp()+"\t 보 스     MAX_HP : "+b.MAX_Hp()+
 						  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  CUR_HP : "+lu.MAX_Hp()+"\t 보 스     CUR_HP : "+b.MAX_Hp()+"\n");
 	       	System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
-		
+	       
+	       	int n = 0;
 		
 		 do {
 			Scanner input = new Scanner(System.in);
 			
-			System.out.println("\n어떤 행동을 하시겠습니까 >>");
+			System.out.printf("\n어떤 행동을 하시겠습니까 [스킬 사용 횟수 =%d]  >>",n);
 			String act = input.nextLine();
 			
 	if("q".equalsIgnoreCase(act)) {
+			++n;
 			lu.attack(b);
 			printHp(lu, b);
 			if(b.getHp()<=0) {
@@ -42,7 +44,7 @@ public class Battle {
 					}
 			
 	}if ("w".equalsIgnoreCase(act)) {
-		
+			++n;
 				lu.heal();
 				printHp(lu, b);
 			}
@@ -52,9 +54,15 @@ public class Battle {
 		System.out.println("대기");
  
 		
-	}else if("r".equalsIgnoreCase(act)) {
-		
-	}	
+	}else if("r".equalsIgnoreCase(act)&&(n%5==0)) {
+				++n;
+			lu.hyperAttack(b);
+			printHp(lu, b);
+			if(b.getHp()<=0) {
+				System.out.println("전투에서 승리했습니다.\n");
+				break ;
+	}
+	}
 	
 	
 	try {
@@ -111,6 +119,8 @@ public class Battle {
 //	System.out.println("_____________________________________________________________");
 		 	printHp(lu, b);
 		}while(true);
+		}
+		 
 	}
 	
-}
+

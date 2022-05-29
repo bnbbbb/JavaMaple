@@ -17,10 +17,10 @@ public class Dungeon{
 		
 	}
 	
-	public void print(Luminus lu , BlackWizard b) {
+	public void start(Luminus lu , BlackWizard b) {
 		Scanner input = new Scanner(System.in);
 		
-		Thread bw = new Thread(Dungeon ,b);
+		Thread bw = new Thread(b);
 		bw.start();
 		
 		

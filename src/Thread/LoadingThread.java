@@ -132,6 +132,20 @@ public class LoadingThread implements Runnable{
 	
 	}
 	
+	public void vevo() {
+		System.out.println("[비어완]: 드디어  비보를 다 모았 ");
+		for(int i=0; i<10; i++ ) {
+			System.out.println("||||||||||||||||||||");
+		
+			try {
+				Thread.sleep(140);
+			} catch (InterruptedException e) {}
+		
+		}
+		
+	}
+	
+	
 	
 	public void run() {
 		switch(type) {

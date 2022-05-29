@@ -7,7 +7,7 @@ import Character.Luminus;
 public class BlackSlime  extends Boss{
 	 
 		public BlackSlime(){
-			super(15000,1300,3000);
+			super(10000,1300,3000);
 		}
 		
 		public String getName() {
