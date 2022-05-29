@@ -15,32 +15,29 @@ public abstract class Boss {
 	}
 	
 	
+	
 	public abstract void attack(Luminus lu);
 
-	public int getHp() {
-		return hp;
-	}
+	public abstract String getName();
 	
-	public void setHp(int hp) {
-		this.hp=hp;
-	}
+	public abstract int getHp() ;
 	
-	public int getStrength() {
-		return strength;
-	}
+	public abstract  void setHp(int hp); 
 	
-	public void setStrength(int strength) {
-		this.strength=strength;
-		
-	}
 	
-	public int getDefence() {
-		return defence;
-	}
+	public abstract  int getStrength() ;
 	
-	public void setDefence(int defence) {
-		this.defence = defence;
-	}
+	public abstract  void setStrength(int strength);
+	
+	public abstract  int getDefence(); 
+	
+	public abstract void setDefence(int defence); 
+
+
+	public abstract int MAX_Hp();
+
+
+
 }
 	
 

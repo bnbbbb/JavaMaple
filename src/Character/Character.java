@@ -39,9 +39,12 @@ public abstract class Character {
 
 	abstract void LevelUp(int n);
 	//
+	
 	public int getHp() {
 		return hp;
 	}
+	
+	public abstract String getName();
 	
 	public void setHp(int hp) {
 		this.hp =hp;

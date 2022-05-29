@@ -4,6 +4,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 import Boss.BlackSlime;
+import Boss.BlackWizard;
 import Boss.Boss;
 import Boss.MolKing;
 import Boss.Ravana;
@@ -12,6 +13,7 @@ import NPC.DarkRoad1;
 import NPC.Manzi1;
 import Thread.LoadingThread;
 import scene.Battle;
+import scene.Dungeon;
 
 public class Main_sub {
 	
@@ -55,11 +57,12 @@ public class Main_sub {
 //__________________________________________________________
 //화면 구성 
 		Battle battle = new Battle();
+		Dungeon dungeon = new Dungeon();
 		
 		
 // __________________________________________________________
 		Luminus lu = new Luminus();
-		int num = 0, num1= 1;
+//		int num = 0, num1= 1;
 //		//하인즈 --> 전체적인 개요 (비보에 대한 설명 )
 //		save("|두루마기|");
 ////		
@@ -131,13 +134,14 @@ public class Main_sub {
 //					indent();
 //					System.out.println("\t#블랙 슬라임#이 나타났습니다 ");
 //					indent();
+		
 ////					System.out.println("*************전투가 시작됩니다.**************************\n");
 //					Thread b= new Thread(new LoadingThread("battle"));
 //					b.start();
 //					try {
 //						b.join();
 //					}catch (InterruptedException e) {}
-//					battle(lu, new BlackSlime());
+////		
 //					
 //
 //					lu.LevelUp(4);indent();
@@ -170,7 +174,7 @@ public class Main_sub {
 //						b.join();
 //					}catch (InterruptedException e) {}
 //					
-//					battle(lu, new MolKing());
+//	
 //					
 //					lu.LevelUp(5);indent();
 //					System.out.printf("|비보3|를 획득합니다 ");indent();
@@ -201,8 +205,7 @@ public class Main_sub {
 //					try {
 //						b.join();
 //					}catch (InterruptedException e) {}
-//					
-//					battle(lu,new Ravana());
+//			
 //					
 //					lu.LevelUp();indent();
 //					System.out.printf("|궁극의_비보|을 획득합니다.");indent();
@@ -275,18 +278,37 @@ public class Main_sub {
 //		
 //		printSpace();
 //		System.out.println("2대 마스터 등장 ");
-		BlackSlime bs= new BlackSlime();
-		System.out.println("\t#블랙 슬라임#이 나타났습니다\n");
-		sleep_15();
+		
+//***************************************************************************************
+//보스 1 2 3  확인용 		
+//		lu.LevelUp(14);
+//		BlackSlime bs= new BlackSlime();
+//		System.out.println("\n\t#블랙 슬라임#이 나타났습니다\n");
+//		sleep_15();
 //		System.out.println("*************전투가 시작됩니다.**************************\n");
-		Thread b= new Thread(new LoadingThread("battle"));
-		b.start();
-		try {
-			b.join();
-		}catch (InterruptedException e) {}
+//		Thread b= new Thread(new LoadingThread("battle"));
+//		b.start();
+//		try {
+//			b.join();
+//		}catch (InterruptedException e) {}
+//		
+//		battle.print(lu, bs);		
+//***************************************************************************************
+// 던전 
+		printSpace();
+	
+		  lu.LevelUp(40);
+			
+		  BlackWizard bw = new BlackWizard();
+		  dungeon.print(lu,bw);
+//		
+//			
+			
 		
-		battle.print(lu, bs);		
+			
 		
+//***************************************************************************************	
 		
+
 				}//main
 		}//class
