@@ -37,6 +37,9 @@ public class Luminus extends Character {
 		setStrength(getStrength()+200*5);
 		setDefence(getDefence()+100*5);
 		System.out.printf(lv+"Lv이 되었습니다.");
+		try {
+			Thread.sleep(500);
+		}catch(InterruptedException e) {}
 	}
 	public void LevelUp(int n) {
 		lv +=n;

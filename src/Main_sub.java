@@ -42,6 +42,7 @@ public class Main_sub {
 	}
 	
 	static Queue inventory_l = new LinkedList();
+//	static Queue inventory_P = new LinkedList();
 	
 //	static Queue armor = new LinkedList();
 
@@ -224,7 +225,7 @@ public class Main_sub {
 					battle.print(lu,ml);
 					
 					lu.LevelUp(3);indent();//23
-					System.out.printf("|얼음의 비보|를 획득합니다 ");indent();
+					
 					save("|얼음의 비보|");
 					lu.LevelUp(3);indent();//26
 					printSpace();
@@ -263,7 +264,7 @@ public class Main_sub {
 			
 					
 					battle.print(lu,ra);
-					lu.LevelUp();indent();//35
+					lu.LevelUp(2);indent();//35
 					System.out.printf("|궁극의_비보|을 획득합니다.");indent();
 					save("|궁극의의_비보|");
 					printSpace();
@@ -316,7 +317,7 @@ public class Main_sub {
 						System.out.println("[비어완] : [리에나]의 리엔은 외부인에 매우 적대적인 인물입니다.");indent();
 						System.out.print("[리에나]로 가서 <몰킹>을  처치 하면 더 나을지도 모릅니다.>>");indent();
 						lu.LevelUp(1);indent();	//18
-						System.out.println("행운을 빕니다....");indent();
+						System.out.println("[비어만] : 행운을 빕니다....");indent();
 						lu.LevelUp(2);indent();//20
 				}else if ( num ==2) {
 						
@@ -356,6 +357,12 @@ public class Main_sub {
 	            e.printStackTrace();
 	        }
 		
+		 
+		 while(true) {
+			 System.out.print("던전에 입장하시겠습니까 ? >>");
+			
+			 
+		 }
 //***************************************************************************************
 //보스 1 2 3  확인용 		
 //		lu.LevelUp(14);
@@ -372,52 +379,7 @@ public class Main_sub {
 //		battle.print(lu, bs);		
 //***************************************************************************************
 // 던전 
-//		printSpace();
-//	
-//		  lu.LevelUp(40);
-//		  BlackWizard bw = new BlackWizard();
-		  
-		  
-////		
-//		System.out.println("____________________________________________________________");
-//		System.out.printf("\t\t\t\t\t 보 스     MAX_HP : "+bw.MAX_Hp()+
-//							 "\n\t\t\t\t\t 보 스     CUR_HP : "+bw.getHp()+"\n");	
-//		System.out.println("_____________________________________________________________");
-////			
-//		Thread fw = new Thread(new BlackWizard());
-////	 while(true) {
-//			 
-//			System.out.println();
-//			System.out.println("\n어떤 행동을 하시겠습니까 >>");
-//			String act = input.nextLine();
-//			
-//	if("q".equalsIgnoreCase(act)) {
-//			lu.attack(bw);
-//			
-//			if(bw.getHp()<=0) {
-//				System.out.println("전투에서 승리했습니다.\n");
-//				break ;
-//					}
-//			
-//	}if ("w".equalsIgnoreCase(act)) {
-//		
-//				lu.heal();
-//			
-//			}
-//	
-//	
-//	if("e".equalsIgnoreCase(act)) {
-//		System.out.println("대기");
 //
-//		
-//	}else if("r".equalsIgnoreCase(act)) {
-//			
-//				}		
-//	
-//		 }
-	
-		
-			
 		
 //***************************************************************************************	
 

@@ -21,15 +21,6 @@ public abstract class Character {
 		this.location = location ;
 	}
 	
-	public void move(String location) {
-		this.location = location ;
-		System.out.println(location+"으로 이동합니다");
-	}
-
-	public void meet (String NPC) {
-		System.out.println(NPC+"에게 말을 겁니다 .");
-	}
-	
 	void status() {
 		System.out.println("HP:"+hp);
 		System.out.println("strength:"+strength);
@@ -38,7 +29,7 @@ public abstract class Character {
 	}
 
 	abstract void LevelUp(int n);
-	//
+	
 	
 	public int getHp() {
 		return hp;

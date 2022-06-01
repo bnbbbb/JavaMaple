@@ -5,7 +5,7 @@ import Character.Luminus;
 public class Ravana extends Boss{
 	
 	public Ravana(){
-		super(10000, 4000, 300);
+		super(100000, 4000, 300);
 	}
 	public String getName() {
 		return "¶ó¹Ù³ª";

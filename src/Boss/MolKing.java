@@ -5,7 +5,7 @@ import Character.Luminus;
 public class MolKing extends Boss{
 	
 	public MolKing(){
-		super(10000, 2000, 150);
+		super(60000, 2000, 150);
 	}
 	
 	public String getName() {
