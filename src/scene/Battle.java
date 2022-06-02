@@ -9,12 +9,11 @@ import Character.Luminus;
 
 public class Battle {
 	
-	public void printHp(Luminus lu, Boss b) {
-		System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
-		System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  MAX_HP : "+lu.MAX_Hp()+"\t 보 스     MAX_HP : "+b.MAX_Hp()+
-						 "\n\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  CUR_HP : "+lu.getHp()+"\t 보 스     CUR_HP : "+b.getHp()+"\n");	
-		System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
-	
+	public void printHp(Luminus lu, Boss bw) {
+		System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
+		System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  MAX_HP : "+lu.MAX_Hp()+"\t 보 스     MAX_HP : "+bw.MAX_Hp()+
+						 "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  CUR_HP : "+lu.getHp()+"\t 보 스     CUR_HP : "+bw.getHp()+"\n");	
+		System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
 		
 	}
 	
@@ -35,7 +34,7 @@ public class Battle {
 			String act = input.nextLine();
 			
 	if("q".equalsIgnoreCase(act)) {
-			++n;
+		n= (n%3)+1;
 			lu.attack(b);
 			printHp(lu, b);
 			if(b.getHp()<=0) {
@@ -44,7 +43,7 @@ public class Battle {
 					}
 			
 	}if ("w".equalsIgnoreCase(act)) {
-			++n;
+		n= (n%3)+1;
 				lu.heal();
 				printHp(lu, b);
 			}
@@ -54,9 +53,10 @@ public class Battle {
 		System.out.println("대기");
  
 		
-	}else if("r".equalsIgnoreCase(act)&&(n%5==0)) {
-				++n;
-			lu.hyperAttack(b);
+	}else if("r".equalsIgnoreCase(act)&&(n%3==0)) {
+		n= (n%3)+1;
+			lu.hyperAttack_1(b);
+			
 			printHp(lu, b);
 			if(b.getHp()<=0) {
 				System.out.println("전투에서 승리했습니다.\n");

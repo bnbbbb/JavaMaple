@@ -1,13 +1,16 @@
 package Character;
 
 import java.awt.image.MultiPixelPackedSampleModel;
+import java.util.Scanner;
 import java.util.Stack;
 
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
 
+import Boss.BlackWizard;
 import Boss.Boss;
 import NPC.DarkRoad1;
 import Thread.SkillEffectThread;
+import scene.Battle;
 
 public class Luminus extends Character {
 	private int mp;
@@ -61,26 +64,11 @@ public class Luminus extends Character {
 //		this.mp = mp;
 //	}
 	
-	public void attack(Boss boss) {
-	System.out.println("=====================");
-	System.out.println(" ________________ ");
-	System.out.println("|                |");
-	System.out.println("|     ATTACK     |");
-	System.out.println("|     ATTACK     |");
-	System.out.println("|     ATTACK     |");
-	System.out.println("|     ATTACK     |");
-	System.out.println("|     ATTACK     |");
-	System.out.println("|     ATTACK     |");
-	System.out.println("|________________|");
-	System.out.println("                  ");
-	System.out.println("======================");
-	System.out.println();
+	public void attack(Boss bw) {
+				hyperAttack_1();
 		
-//		double percent = 0.1*((int)(Math.random()*3)+8); //
-//		int damage =0 ;
-//		damage = (int)(getStrength()-boss.get)
-		System.out.println(getName()+" "+boss.getName()+"에 "+getStrength()+"데미지");
-		boss.setHp(boss.getHp()-this.getStrength());
+		System.out.println(getName()+" "+bw.getName()+"에 "+2*getStrength()+"데미지");
+		bw.setHp(bw.getHp()-this.getStrength());
 		
 	}
 	
@@ -115,17 +103,37 @@ public class Luminus extends Character {
 		}
 		
 		}
-	public void hyperAttack(Boss boss) {
-		 System.out.println("\n|| 아  || 포  || 칼  || 립  || 스 ||");
+	public void hyperAttack_1(Boss bw) {// r 스킬 
+		
 		 
 		System.out.println();
-		System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||||");
+		
 		
 		System.out.println();
-		Thread s1 = new Thread(new SkillEffectThread());
+		Thread s1 = new Thread(new SkillEffectThread("luminus_r"));
 		s1.start();
 		 try {
 			 s1.join();
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+		
+		System.out.println(getName()+" "+bw.getName()+"에 "+3*getStrength()+"데미지");
+		bw.setHp(bw.getHp()-5*this.getStrength());
+		}
+	
+	
+	public void hyperAttack_2(Boss boss) {   //e 스킬
+		
+		 
+		System.out.println();
+		
+		
+		System.out.println();
+		Thread s2 = new Thread(new SkillEffectThread("luminus_e"));
+		s2.start();
+		 try {
+			 s2.join();
 	        } catch (InterruptedException e) {
 	            e.printStackTrace();
 	        }
@@ -134,12 +142,40 @@ public class Luminus extends Character {
 		boss.setHp(boss.getHp()-3*this.getStrength());
 		}
 	
-	public void stun() {
-			
+	public void hyperAttack_1() {		//q 스킬
+		 
+		System.out.println();
+				
+		System.out.println();
+		Thread s1 = new Thread(new SkillEffectThread("luminus_q"));
+		s1.start();
+		 try {
+			 s1.join();
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+		
+		
 		}
+	
+	public void hyperAttack_2() {		//R 스킬
+		 
+		System.out.println();
+				
+		System.out.println();
+		Thread s2 = new Thread(new SkillEffectThread("luminus_r"));
+		s2.start();
+		 try {
+			 s2.join();
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
 		
-		
-}
+	
+		}
+	
 
+
+	}
 
 	
