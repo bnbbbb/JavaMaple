@@ -1,5 +1,11 @@
-/Thread/
-/scene/
 /Boss/
 /Character/
+/Main.class
+/Main_sub.class
 /NPC/
+/Skill.class
+/Start_Story.class
+/Thread/
+/scene/
+/PhThread/
+/Skillset/

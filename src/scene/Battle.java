@@ -71,7 +71,10 @@ public class Battle {
 	}
 			
 	}
-	
+	else if(("r".equalsIgnoreCase(act)&&(n%2==0)||(lu.lv<30))) {
+		System.out.println("\n레벨이 낮아 스킬사용 불가합니다.");
+		continue;
+	}
 	
 	try {
 		Thread.sleep(1000);

@@ -13,7 +13,7 @@ public class Main {
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("진행할 캐릭터를 선택 하세요\n(1)Luminus (2)Pantom (3)Evan >>");
+		System.out.println("진행할 캐릭터를 선택 하세요\n(1)Luminus (2)Pantom>>");
 		int select =input.nextInt();
 		
 		if(select==1) {
