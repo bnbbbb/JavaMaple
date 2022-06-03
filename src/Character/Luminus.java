@@ -103,22 +103,19 @@ public class Luminus extends Character {
 		}
 		
 		}
+	
+	
+	
 	public void hyperAttack_1(Boss bw) {// r 스킬 
 		
-		 
+		hyperAttack_3();
 		System.out.println();
 		
 		
 		System.out.println();
-		Thread s1 = new Thread(new SkillEffectThread("luminus_r"));
-		s1.start();
-		 try {
-			 s1.join();
-	        } catch (InterruptedException e) {
-	            e.printStackTrace();
-	        }
 		
-		System.out.println(getName()+" "+bw.getName()+"에 "+3*getStrength()+"데미지");
+		
+		System.out.println(getName()+" "+bw.getName()+"에 "+5*getStrength()+"데미지");
 		bw.setHp(bw.getHp()-5*this.getStrength());
 		}
 	
@@ -158,7 +155,23 @@ public class Luminus extends Character {
 		
 		}
 	
-	public void hyperAttack_2() {		//R 스킬
+	public void hyperAttack_2() {		//E스킬
+		 
+		System.out.println();
+				
+		System.out.println();
+		Thread s2 = new Thread(new SkillEffectThread("luminus_e"));
+		s2.start();
+		 try {
+			 s2.join();
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+		
+	
+		}
+	
+	public void hyperAttack_3() {		//R 스킬
 		 
 		System.out.println();
 				

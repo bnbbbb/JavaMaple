@@ -226,7 +226,7 @@ public class SkillEffectThread implements Runnable {
 }
 	
 	
-	public void Luminus_R() {
+	public void Luminus_E() {
 		String[] attackImages=new String[7];
 		
 		   attackImages[0]="                    \n"+
@@ -400,7 +400,7 @@ public class SkillEffectThread implements Runnable {
 	}
 	
 	
-	public void Luminus_E() {
+	public void Luminus_R() {
 		String[] hyperSkillImages= new String[9];
 		
 		hyperSkillImages[0]="          \n"+
@@ -699,7 +699,7 @@ hyperSkillImages[2]="             i.  .r:                    \n"+
 			}
 			System.out.println(hyperSkillImages[i]);
 			try {
-				Thread.sleep(120);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				
 			}

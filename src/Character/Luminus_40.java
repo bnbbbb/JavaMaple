@@ -45,6 +45,8 @@ private int mp;
 		strength+=200*n;
 		defence +=50*n ;
 		System.out.printf( "Lv "+n+" 올라 "+lv+"Lv이 되었습니다.\n");
+		
+	
 		try {
 			Thread.sleep(500);
 		}catch(InterruptedException e) {}
@@ -139,7 +141,7 @@ private int mp;
 		System.out.println();
 				
 		System.out.println();
-		Thread s2 = new Thread(new SkillEffectThread("luminus_r"));
+		Thread s2 = new Thread(new SkillEffectThread("luminus_e"));
 		s2.start();
 		 try {
 			 s2.join();
@@ -245,22 +247,22 @@ private int mp;
 									 "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  CUR_HP : "+getHp()+"\t 보 스     CUR_HP : "+bw.getHp()+"\n");	
 					System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
 					
-//		   }if("e".equalsIgnoreCase(act)){
-//			  ++n;		
-//			  hyperAttack_1();
-//			  System.out.println(getName()+" "+bw.getName()+"에 "+3*getStrength()+"데미지");
-//				bw.setHp(bw.getHp()-3*this.getStrength());
-//			 System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
-//				System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  MAX_HP : "+MAX_Hp()+"\t 보 스     MAX_HP : "+bw.MAX_Hp()+
-//								 "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  CUR_HP : "+getHp()+"\t 보 스     CUR_HP : "+bw.getHp()+"\n");	
-//				System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
-//			
-//				
-//				
-//				if(bw.getHp()<=0) {
-//					System.out.println("전투에서 승리했습니다.\n");
-//					break ;
-//									}
+		   }if("e".equalsIgnoreCase(act)){
+			   n= (n%3)+1;	
+			  hyperAttack_3();
+			  System.out.println(getName()+" "+bw.getName()+"에 "+3*getStrength()+"데미지");
+				bw.setHp(bw.getHp()-3*this.getStrength());
+			 System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
+				System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  MAX_HP : "+MAX_Hp()+"\t 보 스     MAX_HP : "+bw.MAX_Hp()+
+								 "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  CUR_HP : "+getHp()+"\t 보 스     CUR_HP : "+bw.getHp()+"\n");	
+				System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
+			
+				
+				
+				if(bw.getHp()<=0) {
+					System.out.println("전투에서 승리했습니다.\n");
+					break ;
+									}
 				
 		   }else if("r".equalsIgnoreCase(act)&&(n%3==0)) {
 				n=0;

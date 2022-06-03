@@ -73,8 +73,8 @@ public class Main_sub {
 		BlackWizard b = new BlackWizard();
 // __________________________________________________________
 	
-		Start_Story story = new Start_Story();
-		
+//		Start_Story story = new Start_Story();
+//		
 //		story.start_story();
 //		story.birth();
 //				Thread loading1 = new Thread(new LoadingThread("loading"));
@@ -82,12 +82,12 @@ public class Main_sub {
 //				try {
 //					loading1.join();
 //				}catch (InterruptedException e) {}
-				
-		
-		
-	
-		
-		
+//				
+//		
+//		
+//	
+//		
+//		
 //		int num = 0, num1= 1;
 //		//하인즈 --> 전체적인 개요 (비보에 대한 설명 )
 //		save("|두루마기|");
@@ -187,10 +187,10 @@ public class Main_sub {
 //					indent();
 //		
 //					System.out.println("*************전투가 시작됩니다.**************************\n");
-//					Thread b= new Thread(new LoadingThread("battle"));
-//					b.start();
+//					Thread b1= new Thread(new LoadingThread("battle"));
+//					b1.start();
 //					try {
-//						b.join();
+//						b1.join();
 //					}catch (InterruptedException e) {}
 //		
 //					battle.print(lu, bs);	
@@ -219,10 +219,10 @@ public class Main_sub {
 //					
 //					System.out.println("\t#몰킹#이 나타났습니다");indent();
 //					MolKing ml= new MolKing();
-//					Thread b= new Thread(new LoadingThread("battle"));
-//					b.start();
+//					Thread b2= new Thread(new LoadingThread("battle"));
+//					b2.start();
 //					try {
-//						b.join();
+//						b2.join();
 //					}catch (InterruptedException e) {}
 //					
 //					battle.print(lu,ml);
@@ -258,11 +258,11 @@ public class Main_sub {
 //					System.out.println("\t#라바나#가 나타났습니다 ");
 //					indent();
 //					
-//					Thread b= new Thread(new LoadingThread("battle"));
-//					b.start();
+//					Thread b3= new Thread(new LoadingThread("battle"));
+//					b3.start();
 //					
 //					try {
-//						b.join();
+//						b3.join();
 //					}catch (InterruptedException e) {}
 //			
 //					
@@ -306,7 +306,7 @@ public class Main_sub {
 //						
 //						
 //						lu.LevelUp(2);indent();//8		
-//						
+//						System.out.println("[비어완] : |태양의 비보|를 구해오셨군요");indent();
 //						System.out.println("[비어완] : [커닝시티] 정보상이 보내온 정보에 따르면 다크로드 문은 대대로 오로라에 속해있었다고합니다\n");indent();
 //						System.out.println("\t그에게 미리 접촉해 [루미너스]님이 간다고 전해놓은 상태입니다.");indent();
 //					
@@ -316,16 +316,15 @@ public class Main_sub {
 //							}
 //				
 //				else if ( num ==1) {
-//					
-//						System.out.println("[비어완] : [리에나]의 리엔은 외부인에 매우 적대적인 인물입니다.");indent();
-//						System.out.print("[리에나]로 가서 <몰킹>을  처치 하면 더 나을지도 모릅니다.>>");indent();
+//						System.out.println("[비어완] : |어둠의 비보|를 구해오셨군요");indent();
+//						System.out.println("[비어완] : [리에나]의 리린은 외부인에 매우 적대적인 인물입니다.");indent();
+//						System.out.println("[비어완] : [리에나]정보원에 의하면  최근 <몰킹>이란 몬스터가 이상한 물건을 획득한 것 같다고 합니다");indent();
+//						System.out.print("[비어완] : 리린을 만나고오기 보단... <몰킹>만 처리하고 확인해 보고 오는 것이 나을것 같습니다....>>>");indent();
 //						lu.LevelUp(1);indent();	//18
 //						System.out.println("[비어만] : 행운을 빕니다....");indent();
 //						lu.LevelUp(2);indent();//20
 //				}else if ( num ==2) {
-//						
-//						
-//						
+//					    System.out.println("[비어완] : 이제 1개 남았군요....");indent();					
 //						Thread v2 = new Thread(new Viouwan("start2"));indent();
 //						v2.start();
 //					try {
@@ -349,7 +348,7 @@ public class Main_sub {
 //						}//while
 //		
 //		
-//		printSpace();04
+//		printSpace();
 //		System.out.println("비보들이 빛을 내며 무언가 나옵니다!!! ");
 //		indent();
 //		Thread m2 = new Thread(new Second_Master());
@@ -360,37 +359,46 @@ public class Main_sub {
 //	            e.printStackTrace();
 //	        }
 		
-	
-		
-			 
-		 
-//		  System.out.print("검은 마법사와 싸우러 가시겠습니까?[y / else ] >>");
-//		   String answer= input.next();
-//				
-//				if(answer.equals("y")) {
-//				
-//					System.out.println("");
-//					printSpace();
-//					Thread b4 = new Thread(new LoadingThread("battle"));
-//					b4.start();
-//					try {
-//						b4.join();
-//					}catch (InterruptedException e) {}
-//					
-//					printSpace();
-//					System.out.println("검은마법사가 나타났습니다!!!!!!!!!\n\n\n\n");
-//					try {
-//							Thread.sleep(1000);
-//					}catch(InterruptedException e) {}
-//					
-//				lu_40.Dungeon();
-//				}
-//				else {
-//					System.out.println("수고하셨습니다.");
-//					System.exit(0);
-//				}
+//	
+////************************************************************************************
+//		//던전
+//		 
+		  System.out.print("검은 마법사와 싸우러 가시겠습니까?[y / else ] >>");
+		   String answer= input.next();
+				
+		   while(true) {
+		   System.out.printf("모드를 선택하십시오. [1. normal /2. hard ]>>");
+		  String answer1 = input.next();
+		  if("1".equals(answer1)) {
+				if(answer.equalsIgnoreCase("y")) {
+				
+					System.out.println("");
+					printSpace();
+					Thread b4 = new Thread(new LoadingThread("battle"));
+					b4.start();
+					try {
+						b4.join();
+					}catch (InterruptedException e) {}
+					
+					printSpace();
+					System.out.println("검은마법사가 나타났습니다!!!!!!!!!\n\n\n\n");
+					try {
+							Thread.sleep(1000);
+					}catch(InterruptedException e) {}
+					
+				lu_40.Dungeon();
+				}
+				else {
+					System.out.println("수고하셨습니다.");
+					System.exit(0);
+				}
 			
-		
+		  }
+		  else {
+			  System.out.println("아직 안만들었습니다. 속도만 빠르게 하면 됩니다.");
+		  }
+		  
+		   }
 //***************************************************************************************
 //보스 1 2 3  확인용 		
 //		lu.LevelUp(14);
@@ -405,19 +413,30 @@ public class Main_sub {
 //			b5.join();
 //		}catch (InterruptedException e) {}
 //		
-//		battle.print(lu, bs);		
-//***************************************************************************************	
-		lu.LevelUp(30);
-		Ravana ra= new Ravana();
-		sleep_15();
-		System.out.println("*************전투가 시작됩니다.**************************\n");
-		Thread b6= new Thread(new LoadingThread("battle"));
-		b6.start();
-		try {
-			b6.join();
-		}catch (InterruptedException e) {}
-		
-		battle.print(lu, ra);
+//		battle.print(lu, bs);
+////***************************************************************************************		
+//		lu.LevelUp(10);
+//		System.out.println("\t#몰킹#이 나타났습니다");indent();
+//		MolKing ml= new MolKing();
+//		Thread b2= new Thread(new LoadingThread("battle"));
+//		b2.start();
+//		try {
+//			b2.join();
+//		}catch (InterruptedException e) {}
+//		
+//		battle.print(lu,ml);	
+////***************************************************************************************	
+//		lu.LevelUp(32);
+//		Ravana ra= new Ravana();
+//		sleep_15();
+//		System.out.println("*************전투가 시작됩니다.**************************\n");
+//		Thread b6= new Thread(new LoadingThread("battle"));
+//		b6.start();
+//		try {
+//			b6.join();
+//		}catch (InterruptedException e) {}
+//		
+//		battle.print(lu, ra);
 //***************************************************************************************
 // 던전 
 //

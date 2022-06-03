@@ -19,10 +19,12 @@ public class Battle {
 	
 		
 	public void print(Luminus lu , Boss b) {
+		lu.setHp(lu.MAX_Hp());
+		
 		System.out.println("\n\n\t\t\t\t\t\t\t\t\t\t\t\t__________[Battle]___________________________________________");
 		
 		System.out.printf("\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  MAX_HP : "+lu.MAX_Hp()+"\t 보 스     MAX_HP : "+b.MAX_Hp()+
-						  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  CUR_HP : "+lu.MAX_Hp()+"\t 보 스     CUR_HP : "+b.MAX_Hp()+"\n");
+						  "\n\t\t\t\t\t\t\t\t\t\t\t\t\t루미너스  CUR_HP : "+lu.getHp()+"\t 보 스     CUR_HP : "+b.MAX_Hp()+"\n");
 	       	System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t_____________________________________________________________");
 	       
 	       	int n = 0;
@@ -34,7 +36,7 @@ public class Battle {
 			String act = input.nextLine();
 			
 	if("q".equalsIgnoreCase(act)) {
-		n= (n%3)+1;
+		n= (n%2)+1;
 			lu.attack(b);
 			printHp(lu, b);
 			if(b.getHp()<=0) {
@@ -43,18 +45,23 @@ public class Battle {
 					}
 			
 	}if ("w".equalsIgnoreCase(act)) {
-		n= (n%3)+1;
+		n= (n%2)+1;
 				lu.heal();
 				printHp(lu, b);
 			}
 	
 	
 	if("e".equalsIgnoreCase(act)) {
-		System.out.println("대기");
- 
+		n= (n%2)+1;
+		lu.hyperAttack_2(b);
+		printHp(lu, b);
+		if(b.getHp()<=0) {
+			System.out.println("전투에서 승리했습니다.\n");
+			break ;
 		
-	}else if("r".equalsIgnoreCase(act)&&(n%3==0)) {
-		n= (n%3)+1;
+		}
+	}else if(("r".equalsIgnoreCase(act))&&(n%2==0)&&(lu.lv>=30)) {  //레벨 30 이상이어야 획득 
+		n= (n%2)+1;
 			lu.hyperAttack_1(b);
 			
 			printHp(lu, b);
@@ -62,6 +69,7 @@ public class Battle {
 				System.out.println("전투에서 승리했습니다.\n");
 				break ;
 	}
+			
 	}
 	
 	
@@ -69,7 +77,8 @@ public class Battle {
 		Thread.sleep(1000);
 	}catch(InterruptedException e) {}
 	
-		b.attack(lu);
+		b.attack(lu);					//보스 루미너스 공격
+		
 		 if(lu.getHp()<=0) {
 			 for(int i = 0 ; i< 60 ; i++) 
 			 System.out.println();
@@ -118,9 +127,15 @@ public class Battle {
 //					 "\n\t루미너스  CUR_HP : "+lu.getHp()+"\t 보 스     CUR_HP : "+b.getHp()+"\n");	
 //	System.out.println("_____________________________________________________________");
 		 	printHp(lu, b);
-		}while(true);
-		}
+		
+	
 		 
+	}while(true);
+		
 	}
+}
+	
+		 
+
 	
 
